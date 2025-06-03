@@ -1,0 +1,37 @@
+{
+  "navbarlinks": {
+    "home": "الرئيسية",
+    "aboutus": "من نحن",
+    "contactus": "تواصل معنا",
+    "terms_conditions": "الشروط والأحكام",
+    "privacy_policy": "سياسة الخصوصية"
+  },
+  "downloadapp": "تحميل التطبيق",
+  "auditstation": "محطة التدقيق",
+  "auditTitle": {
+    "first": "منصة",
+    "second": "محطة التدقيق",
+    "third": "الآن على هاتفك!",
+    "subTitle": "منصة واحدة تجمع المحاسبين مع الشركات — وظّف أو توظّف خلال دقائق، من أي مكان وبأعلى كفاءة. حمّل التطبيق الآن وابدأ."
+  },
+  "contactPage": {
+    "getInTouch": "تواصل معنا",
+    "phoneTitle": "الهاتف",
+    "emailTitle": "البريد الإلكتروني",
+    "addressTitle": "العنوان",
+    "followUs": "تابعنا",
+    "sendMessage": "أرسل لنا رسالة",
+    "nameLabel": "الاسم",
+    "namePlaceholder": "أدخل اسمك الكامل",
+    "emailLabel": "البريد الإلكتروني",
+    "emailPlaceholder": "أدخل عنوان بريدك الإلكتروني",
+    "phoneLabel": "رقم الهاتف",
+    "phonePlaceholder": "أدخل رقم هاتفك (اختياري)",
+    "subjectLabel": "الموضوع",
+    "subjectPlaceholder": "ما هو موضوع رسالتك؟",
+    "messageLabel": "رسالتك",
+    "messagePlaceholder": "كيف يمكننا مساعدتك؟",
+    "submitButton": "إرسال الرسالة"
+  },
+  "contactus": "اتصل بنا"
+}

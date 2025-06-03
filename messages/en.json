@@ -1,0 +1,37 @@
+{
+  "navbarlinks": {
+    "home": "Home",
+    "aboutus": "About Us",
+    "contactus": "Contact Us",
+    "terms_conditions": "Terms & Conditions",
+    "privacy_policy": "Privacy Policy"
+  },
+  "downloadapp": "Download App",
+  "auditstation": "Audit Station",
+  "auditTitle": {
+    "first": "Platform",
+    "second": "Audit Station",
+    "third": "Now on your phone!",
+    "subTitle": "A single platform connecting accountants with companies — hire or get hired in minutes, from anywhere, with top efficiency. Download the app now and get started."
+  },
+  "contactPage": {
+    "getInTouch": "Get in Touch",
+    "phoneTitle": "Phone",
+    "emailTitle": "Email",
+    "addressTitle": "Address",
+    "followUs": "Follow Us",
+    "sendMessage": "Send Us a Message",
+    "nameLabel": "Your Name",
+    "namePlaceholder": "Enter your full name",
+    "emailLabel": "Your Email",
+    "emailPlaceholder": "Enter your email address",
+    "phoneLabel": "Phone Number",
+    "phonePlaceholder": "Enter your phone number (optional)",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "What is this regarding?",
+    "messageLabel": "Your Message",
+    "messagePlaceholder": "How can we help you?",
+    "submitButton": "Send Message"
+  },
+  "contactus": "Contact Us"
+}

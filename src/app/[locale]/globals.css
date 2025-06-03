@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .app-button {
+    transition: all 0.3s ease;
+  }
+  .app-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  .mockup-shadow {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  .shine {
+    position: relative;
+    overflow: hidden;
+  }
+  .shine::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg);
+    animation: shine 6s infinite;
+  }
+  @keyframes shine {
+    0% {
+      transform: translateX(-100%) rotate(30deg);
+    }
+    20%,
+    100% {
+      transform: translateX(100%) rotate(30deg);
+    }
+  }
+  .custom_padding {
+    @apply ltr:xl:pl-28 ltr:lg:pl-28 ltr:md:pl-0 ltr:sm:pl-0 ltr:xs:pl-0 rtl:xl:pr-28 rtl:lg:pr-28 rtl:md:pr-0 rtl:sm:pr-0 rtl:xs:pr-0;
+  }
+  .custom_align {
+    @apply xl:text-start lg:text-start md:text-center sm:text-center xs:text-center;
+  }
+  .custom_header_p {
+    @apply xl:px-8 lg:px-8 md:px-6 sm:px-1 xs:px-1;
+  }
+}

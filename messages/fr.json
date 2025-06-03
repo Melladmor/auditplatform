@@ -1,0 +1,38 @@
+{
+  "navbarlinks": {
+    "home": "Accueil",
+    "aboutus": "À propos de nous",
+    "contactus": "Contactez-nous",
+    "terms_conditions": "Conditions générales",
+    "privacy_policy": "Politique de confidentialité"
+  },
+  "downloadapp": "Télécharger l'application",
+  "auditstation": "Audit Station",
+  "auditTitle": {
+    "first": "Plateforme",
+    "second": "Audit Station",
+    "third": "Maintenant sur votre téléphone!",
+    "subTitle": "Une seule plateforme qui connecte les comptables aux entreprises — recrutez ou soyez recruté en quelques minutes, où que vous soyez, avec une efficacité optimale. Téléchargez l'application dès maintenant et commencez."
+  },
+
+  "contactPage": {
+    "getInTouch": "Contactez-nous",
+    "phoneTitle": "Téléphone",
+    "emailTitle": "Email",
+    "addressTitle": "Adresse",
+    "followUs": "Suivez-nous",
+    "sendMessage": "Envoyez-nous un message",
+    "nameLabel": "Votre nom",
+    "namePlaceholder": "Entrez votre nom complet",
+    "emailLabel": "Votre email",
+    "emailPlaceholder": "Entrez votre adresse email",
+    "phoneLabel": "Numéro de téléphone",
+    "phonePlaceholder": "Entrez votre numéro de téléphone (optionnel)",
+    "subjectLabel": "Sujet",
+    "subjectPlaceholder": "De quoi s'agit-il?",
+    "messageLabel": "Votre message",
+    "messagePlaceholder": "Comment pouvons-nous vous aider?",
+    "submitButton": "Envoyer le message"
+  },
+  "contactus": "Contactez-nous"
+}
