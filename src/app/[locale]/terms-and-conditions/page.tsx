@@ -13,7 +13,7 @@ const page = async () => {
   });
   const t = await getTranslations();
   return (
-    <div className="custom_header_p">
+    <div>
       <Breadcrumb
         title={t("navbarlinks.terms_conditions")}
         items={[
@@ -24,10 +24,12 @@ const page = async () => {
           },
         ]}
       />
-      <div
-        dangerouslySetInnerHTML={{
-          __html: data.content,
-        }}></div>
+      <div className="custom_section">
+        <div
+          dangerouslySetInnerHTML={{
+            __html: data.content,
+          }}></div>
+      </div>
     </div>
   );
 };

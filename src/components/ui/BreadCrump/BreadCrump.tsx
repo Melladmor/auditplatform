@@ -1,6 +1,4 @@
-"use client";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 
 type BreadcrumbItem = {
   label: string;
@@ -14,14 +12,8 @@ export default function Breadcrumb({
   title: string;
   items: BreadcrumbItem[];
 }) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
-    <div className="mb-8 relative overflow-hidden">
+    <div className="mb-8 relative bg-white shadow-md rounded-md mt-4 px-6 overflow-hidden">
       <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 w-2 h-20 bg-gradient-to-b from-primary to-purple-500 rounded-r-md opacity-80"></div>
       <div className="absolute -right-2 bottom-0 w-20 h-20 bg-gradient-to-br from-primary/5 to-purple-500/5 rounded-full blur-xl"></div>
 
@@ -29,16 +21,12 @@ export default function Breadcrumb({
 
       <div className="relative z-10 py-6">
         <h2
-          className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary transition-all duration-700 ease-in-out ${
-            mounted ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
-          }`}>
+          className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary transition-all duration-700 ease-in-out"`}>
           {title}
         </h2>
 
         <nav
-          className={`text-sm transition-all duration-700 delay-300 ease-in-out ${
-            mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-          }`}
+          className={`text-sm transition-all duration-700 delay-300 ease-in-out`}
           aria-label="Breadcrumb">
           <ol className="flex flex-wrap items-center">
             {items.map((item, index) => (
@@ -81,7 +69,6 @@ export default function Breadcrumb({
         </nav>
       </div>
 
-      {/* Decorative dots */}
       <div className="absolute -bottom-4 right-4 flex space-x-1">
         {[...Array(3)].map((_, i) => (
           <div

@@ -8,7 +8,7 @@ export default async function ContactPage() {
 
   return (
     <div>
-      <div className="custom_header_p">
+      <div>
         <Breadcrumb
           title={title("navbarlinks.contactus")}
           items={[
@@ -20,7 +20,7 @@ export default async function ContactPage() {
           ]}
         />
       </div>
-      <section className="relative min-h-[70vh] py-20 px-4 sm:px-6 lg:px-8">
+      <section className="relative min-h-[70vh]  mb-4">
         <div className="container mx-auto relative z-10">
           <div className="flex flex-col lg:flex-row gap-12 mt-10">
             {/* Contact Form Column - comes first on mobile */}

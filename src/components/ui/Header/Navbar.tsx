@@ -25,8 +25,8 @@ export default function Navbar({ links }: Props) {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm padding">
-      <div className="container mx-auto custom_header_p">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+      <div className="custom_header_p mx-auto ">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
             <Logo />
@@ -38,7 +38,7 @@ export default function Navbar({ links }: Props) {
             ))}
           </nav>
 
-          <div className="flex items-center space-x-4 gap-3 space-x-reverse">
+          <div className="flex items-center  gap-3 space-x-reverse">
             <div className="hidden lg:block">
               <LanguageDropdown />
             </div>

@@ -9,7 +9,7 @@ const page = async () => {
   const data: privac_policy = await fetchPublicData({ url: "privacy_policy" });
   const t = await getTranslations();
   return (
-    <div className="custom_header_p">
+    <div>
       <Breadcrumb
         title={t("navbarlinks.privacy_policy")}
         items={[
@@ -17,10 +17,12 @@ const page = async () => {
           { label: t("navbarlinks.privacy_policy"), href: "/privacy-policy" },
         ]}
       />
-      <div
-        dangerouslySetInnerHTML={{
-          __html: data.content,
-        }}></div>
+      <div className="custom_section">
+        <div
+          dangerouslySetInnerHTML={{
+            __html: data.content,
+          }}></div>
+      </div>
     </div>
   );
 };

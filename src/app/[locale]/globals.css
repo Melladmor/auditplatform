@@ -1,9 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-* {
-  scroll-behavior: smooth;
-}
 
 @layer utilities {
   .text-shadow {
@@ -72,6 +69,9 @@
     @apply xl:text-start lg:text-start md:text-center sm:text-center xs:text-center;
   }
   .custom_header_p {
-    @apply xl:px-8 lg:px-8 md:px-6 sm:px-1 xs:px-1;
+    @apply xl:px-10 lg:px-10 md:px-6 sm:px-2 xs:px-2;
+  }
+  .custom_section {
+    @apply bg-white p-4 shadow-lg;
   }
 }

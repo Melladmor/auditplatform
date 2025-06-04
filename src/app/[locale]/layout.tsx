@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Locale, routing } from "@/i18n/routing";
-import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import "react-phone-input-2/lib/style.css";
 import "react-international-phone/style.css";
@@ -13,7 +11,7 @@ import { Tajawal } from "next/font/google";
 
 const tajawal = Tajawal({
   subsets: ["arabic"],
-  weight: ["400", "500", "700"], // customize as needed
+  weight: ["400", "500", "700"],
   display: "swap",
 });
 
@@ -45,17 +43,15 @@ export default async function LocaleLayout({
       suppressHydrationWarning>
       <body>
         <NextIntlClientProvider messages={messages}>
-          <ThemeProvider attribute="class">
-            <Header />
-            <div>
-              <div className="absolute inset-0 z-0 overflow-hidden">
-                <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-primary opacity-10"></div>
-                <div className="absolute top-1/2 -left-24 w-64 h-64 rounded-full bg-secondary opacity-10"></div>
-                <div className="absolute bottom-0 right-1/4 w-72 h-72 rounded-full bg-primary opacity-5"></div>
-              </div>
-              <div className="pt-20">{children}</div>
+          <Header />
+          <div>
+            <div className="absolute inset-0 z-[-999999] overflow-x-hidden">
+              <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-primary opacity-10"></div>
+              <div className="absolute top-1/2 -left-24 w-64 h-64 rounded-full bg-secondary opacity-10"></div>
+              <div className="absolute bottom-0 right-1/4 w-72 h-72 rounded-full bg-primary opacity-5"></div>
             </div>
-          </ThemeProvider>
+            <div className="mt-32 custom_header_p">{children}</div>
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>
