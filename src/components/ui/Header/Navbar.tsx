@@ -25,8 +25,8 @@ export default function Navbar({ links }: Props) {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
-      <div className="custom_header_p mx-auto ">
+    <header className="fixed  top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+      <div className="custom_header_p mx-auto">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
             <Logo />

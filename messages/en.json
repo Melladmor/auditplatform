@@ -31,7 +31,17 @@
     "subjectPlaceholder": "What is this regarding?",
     "messageLabel": "Your Message",
     "messagePlaceholder": "How can we help you?",
-    "submitButton": "Send Message"
-  },
-  "contactus": "Contact Us"
+    "submitButton": "Send Message",
+    "contactus": "Contact Us",
+    "nameRequired": "Name is required",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Please enter a valid email address",
+    "phoneRequired": "Phone number is required",
+    "subjectRequired": "Subject is required",
+    "messageRequired": "Message is required",
+    "dubai": "Dubai",
+    "oman": "Oman",
+    "sending": "Sending...",
+    "messagesent": "Message Sent Successfully"
+  }
 }

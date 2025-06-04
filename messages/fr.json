@@ -32,7 +32,17 @@
     "subjectPlaceholder": "Quel est le sujet ?",
     "messageLabel": "Votre message",
     "messagePlaceholder": "Comment pouvons-nous vous aider ?",
-    "submitButton": "Envoyer le message"
+    "submitButton": "Envoyer le message",
+    "nameRequired": "Le nom est requis",
+    "emailRequired": "L'e-mail est requis",
+    "emailInvalid": "Veuillez entrer une adresse e-mail valide",
+    "phoneRequired": "Le numéro de téléphone est requis",
+    "subjectRequired": "Le sujet est requis",
+    "messageRequired": "Le message est requis",
+    "dubai": "Dubai",
+    "oman": "Oman",
+    "sending": "Envoi en cours...",
+    "messagesent": "Message envoyé avec succès"
   },
   "contactus": "Contactez-nous"
 }

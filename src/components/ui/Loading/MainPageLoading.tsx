@@ -5,7 +5,7 @@ import Image from "next/image";
 const MainPageLoading = () => {
   const { theme } = useTheme();
   return (
-    <div className="h-[100vh] w-full flex justify-center items-center">
+    <div className="h-[100vh] w-full flex justify-center items-center pb-32">
       <div className="w-40 h-40 border-8 text-blue text-4xl animate-spin border-gray-300 flex items-center justify-center border-t-blue-400 rounded-full">
         {theme === "dark" ? (
           <Image

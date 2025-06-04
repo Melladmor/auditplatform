@@ -31,7 +31,17 @@
     "subjectPlaceholder": "ما هو سبب التواصل؟",
     "messageLabel": "رسالتك",
     "messagePlaceholder": "كيف يمكننا مساعدتك؟",
-    "submitButton": "إرسال الرسالة"
+    "submitButton": "إرسال الرسالة",
+    "nameRequired": "الاسم مطلوب",
+    "emailRequired": "البريد الإلكتروني مطلوب",
+    "emailInvalid": "يرجى إدخال بريد إلكتروني صالح",
+    "phoneRequired": "رقم الهاتف مطلوب",
+    "subjectRequired": "الموضوع مطلوب",
+    "messageRequired": "الرسالة مطلوبة",
+    "dubai": "دبي",
+    "oman": "عمان",
+    "sending": "جارٍ الإرسال...",
+    "messagesent": "تم إرسال الرسالة بنجاح"
   },
   "contactus": "اتصل بنا"
 }

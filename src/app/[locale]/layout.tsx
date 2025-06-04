@@ -8,6 +8,7 @@ import "react-phone-input-2/lib/style.css";
 import "react-international-phone/style.css";
 import Header from "@/components/ui/Header/Header";
 import { Tajawal } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 
 const tajawal = Tajawal({
   subsets: ["arabic"],
@@ -45,12 +46,13 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <Header />
           <div>
+            <Toaster position={locale === "ar" ? "top-left" : "top-right"} />
             <div className="absolute inset-0 z-[-999999] overflow-x-hidden">
               <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-primary opacity-10"></div>
               <div className="absolute top-1/2 -left-24 w-64 h-64 rounded-full bg-secondary opacity-10"></div>
               <div className="absolute bottom-0 right-1/4 w-72 h-72 rounded-full bg-primary opacity-5"></div>
             </div>
-            <div className="mt-32 custom_header_p">{children}</div>
+            <div className="pt-32 custom_header_p">{children}</div>
           </div>
         </NextIntlClientProvider>
       </body>

@@ -1,11 +1,13 @@
 import Breadcrumb from "@/components/ui/BreadCrump/BreadCrump";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
+import ContactForm from "./components/ContactForm";
+import fetchPublicData from "@/lib/api/fetchPublicData";
 
 export default async function ContactPage() {
   const t = await getTranslations("contactPage");
   const title = await getTranslations();
-
+  const data = await fetchPublicData({ url: "settings" });
   return (
     <div>
       <div>
@@ -20,108 +22,19 @@ export default async function ContactPage() {
           ]}
         />
       </div>
-      <section className="relative min-h-[70vh]  mb-4">
-        <div className="container mx-auto relative z-10">
+      <section className="relative min-h-[70vh] mb-4">
+        <div className=" relative z-10">
           <div className="flex flex-col lg:flex-row gap-12 mt-10">
-            {/* Contact Form Column - comes first on mobile */}
             <div className="w-full lg:w-[60%]">
               <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-lg">
                 <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-dark">
                   {t("sendMessage")}
                 </h2>
 
-                <form className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label
-                        htmlFor="name"
-                        className="block text-sm font-medium text-gray-700 mb-1">
-                        {t("nameLabel")}
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition"
-                        placeholder={t("namePlaceholder")}
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="block text-sm font-medium text-gray-700 mb-1">
-                        {t("emailLabel")}
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition"
-                        placeholder={t("emailPlaceholder")}
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="phone"
-                      className="block text-sm font-medium text-gray-700 mb-1">
-                      {t("phoneLabel")}
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition"
-                      placeholder={t("phonePlaceholder")}
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="subject"
-                      className="block text-sm font-medium text-gray-700 mb-1">
-                      {t("subjectLabel")}
-                    </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition"
-                      placeholder={t("subjectPlaceholder")}
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium text-gray-700 mb-1">
-                      {t("messageLabel")}
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition"
-                      placeholder={t("messagePlaceholder")}
-                      required></textarea>
-                  </div>
-
-                  <div>
-                    <button
-                      type="submit"
-                      className="w-full bg-primary text-white font-medium py-3 px-6 rounded-lg hover:bg-primary/90 transition shine">
-                      {t("submitButton")}
-                    </button>
-                  </div>
-                </form>
+                <ContactForm />
               </div>
             </div>
 
-            {/* Contact Details Column */}
             <div className="w-full lg:w-[40%]">
               <div className="bg-white h-full rounded-3xl p-6 sm:p-8 shadow-md">
                 <h2 className="text-2xl sm:text-3xl font-bold mb-10 text-dark">
@@ -140,7 +53,7 @@ export default async function ContactPage() {
                         />
                       ),
                       title: t("phoneTitle"),
-                      value: "+1 (555) 123-4567",
+                      value: data?.whatsapp_business,
                     },
                     {
                       icon: (
@@ -152,7 +65,7 @@ export default async function ContactPage() {
                         />
                       ),
                       title: t("emailTitle"),
-                      value: "contact@auditstation.com",
+                      value: data?.email,
                     },
                     {
                       icon: (
@@ -174,11 +87,10 @@ export default async function ContactPage() {
                       title: t("addressTitle"),
                       value: (
                         <>
-                          123 Business Avenue
+                          <strong>{t("dubai")}</strong>: {data?.head_quarters}
                           <br />
-                          Suite 500
+                          <strong>{t("oman")}</strong>: {data?.our_branches}
                           <br />
-                          New York, NY 10001
                         </>
                       ),
                     },
@@ -203,7 +115,6 @@ export default async function ContactPage() {
                     </div>
                   ))}
 
-                  {/* Social Links */}
                   <div className="mt-8">
                     <h3 className="text-lg font-semibold text-gray-800 mb-4">
                       {t("followUs")}
@@ -212,7 +123,8 @@ export default async function ContactPage() {
                       {["facebook", "instagram", "linkedin"].map(
                         (network, index) => (
                           <Link
-                            href="#"
+                            href={data?.[network] || "#"}
+                            target="_blank"
                             key={index}
                             className="bg-primary/10 p-3 rounded-full hover:bg-primary/20 transition">
                             <svg
