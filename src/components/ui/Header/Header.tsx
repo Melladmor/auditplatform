@@ -14,12 +14,12 @@ export default async function HeaderWithSidebar() {
     {
       id: 3,
       title: t("aboutus"),
-      href: "/about-us",
+      href: "/about",
     },
     {
       id: 4,
       title: t("terms_conditions"),
-      href: "/terms-and-condition",
+      href: "/terms-and-conditions",
     },
     {
       id: 5,

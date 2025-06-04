@@ -1,224 +1,240 @@
+import Breadcrumb from "@/components/ui/BreadCrump/BreadCrump";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 
 export default async function ContactPage() {
   const t = await getTranslations("contactPage");
+  const title = await getTranslations();
 
   return (
-    <section className="relative min-h-[70vh] py-20 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto relative z-10">
-        <div className="flex flex-col lg:flex-row gap-12 mt-10">
-          {/* Contact Form Column - comes first on mobile */}
-          <div className="w-full lg:w-[60%]">
-            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-lg">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-dark">
-                {t("sendMessage")}
-              </h2>
+    <div>
+      <div className="custom_header_p">
+        <Breadcrumb
+          title={title("navbarlinks.contactus")}
+          items={[
+            { label: title("navbarlinks.home"), href: "/" },
+            {
+              label: title("navbarlinks.contactus"),
+              href: "/contact",
+            },
+          ]}
+        />
+      </div>
+      <section className="relative min-h-[70vh] py-20 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto relative z-10">
+          <div className="flex flex-col lg:flex-row gap-12 mt-10">
+            {/* Contact Form Column - comes first on mobile */}
+            <div className="w-full lg:w-[60%]">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-lg">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-dark">
+                  {t("sendMessage")}
+                </h2>
 
-              <form className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <form className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-gray-700 mb-1">
+                        {t("nameLabel")}
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition"
+                        placeholder={t("namePlaceholder")}
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium text-gray-700 mb-1">
+                        {t("emailLabel")}
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition"
+                        placeholder={t("emailPlaceholder")}
+                        required
+                      />
+                    </div>
+                  </div>
+
                   <div>
                     <label
-                      htmlFor="name"
+                      htmlFor="phone"
                       className="block text-sm font-medium text-gray-700 mb-1">
-                      {t("nameLabel")}
+                      {t("phoneLabel")}
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition"
+                      placeholder={t("phonePlaceholder")}
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="subject"
+                      className="block text-sm font-medium text-gray-700 mb-1">
+                      {t("subjectLabel")}
                     </label>
                     <input
                       type="text"
-                      id="name"
-                      name="name"
+                      id="subject"
+                      name="subject"
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition"
-                      placeholder={t("namePlaceholder")}
+                      placeholder={t("subjectPlaceholder")}
                       required
                     />
                   </div>
+
                   <div>
                     <label
-                      htmlFor="email"
+                      htmlFor="message"
                       className="block text-sm font-medium text-gray-700 mb-1">
-                      {t("emailLabel")}
+                      {t("messageLabel")}
                     </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={5}
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition"
-                      placeholder={t("emailPlaceholder")}
-                      required
-                    />
+                      placeholder={t("messagePlaceholder")}
+                      required></textarea>
                   </div>
-                </div>
 
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-medium text-gray-700 mb-1">
-                    {t("phoneLabel")}
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition"
-                    placeholder={t("phonePlaceholder")}
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="subject"
-                    className="block text-sm font-medium text-gray-700 mb-1">
-                    {t("subjectLabel")}
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition"
-                    placeholder={t("subjectPlaceholder")}
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-1">
-                    {t("messageLabel")}
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition"
-                    placeholder={t("messagePlaceholder")}
-                    required></textarea>
-                </div>
-
-                <div>
-                  <button
-                    type="submit"
-                    className="w-full bg-primary text-white font-medium py-3 px-6 rounded-lg hover:bg-primary/90 transition shine">
-                    {t("submitButton")}
-                  </button>
-                </div>
-              </form>
+                  <div>
+                    <button
+                      type="submit"
+                      className="w-full bg-primary text-white font-medium py-3 px-6 rounded-lg hover:bg-primary/90 transition shine">
+                      {t("submitButton")}
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
-          </div>
 
-          {/* Contact Details Column */}
-          <div className="w-full lg:w-[40%]">
-            <div className="bg-white h-full rounded-3xl p-6 sm:p-8 shadow-md">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-10 text-dark">
-                {t("getInTouch")}
-              </h2>
+            {/* Contact Details Column */}
+            <div className="w-full lg:w-[40%]">
+              <div className="bg-white h-full rounded-3xl p-6 sm:p-8 shadow-md">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-10 text-dark">
+                  {t("getInTouch")}
+                </h2>
 
-              <div className="space-y-6">
-                {[
-                  {
-                    icon: (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                      />
-                    ),
-                    title: t("phoneTitle"),
-                    value: "+1 (555) 123-4567",
-                  },
-                  {
-                    icon: (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    ),
-                    title: t("emailTitle"),
-                    value: "contact@auditstation.com",
-                  },
-                  {
-                    icon: (
-                      <>
+                <div className="space-y-6">
+                  {[
+                    {
+                      icon: (
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           strokeWidth={2}
-                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                         />
+                      ),
+                      title: t("phoneTitle"),
+                      value: "+1 (555) 123-4567",
+                    },
+                    {
+                      icon: (
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           strokeWidth={2}
-                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                         />
-                      </>
-                    ),
-                    title: t("addressTitle"),
-                    value: (
-                      <>
-                        123 Business Avenue
-                        <br />
-                        Suite 500
-                        <br />
-                        New York, NY 10001
-                      </>
-                    ),
-                  },
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-4">
-                    <div className="bg-primary/10 p-3 rounded-full">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-primary"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        {item.icon}
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-800">
-                        {item.title}
-                      </h3>
-                      <p className="text-gray-600">{item.value}</p>
-                    </div>
-                  </div>
-                ))}
-
-                {/* Social Links */}
-                <div className="mt-8">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                    {t("followUs")}
-                  </h3>
-                  <div className="flex gap-4">
-                    {["facebook", "instagram", "linkedin"].map(
-                      (network, index) => (
-                        <Link
-                          href="#"
-                          key={index}
-                          className="bg-primary/10 p-3 rounded-full hover:bg-primary/20 transition">
-                          <svg
-                            className="h-6 w-6 text-primary"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                            dangerouslySetInnerHTML={{
-                              __html: getSocialIcon(network),
-                            }}
+                      ),
+                      title: t("emailTitle"),
+                      value: "contact@auditstation.com",
+                    },
+                    {
+                      icon: (
+                        <>
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                           />
-                        </Link>
-                      )
-                    )}
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                          />
+                        </>
+                      ),
+                      title: t("addressTitle"),
+                      value: (
+                        <>
+                          123 Business Avenue
+                          <br />
+                          Suite 500
+                          <br />
+                          New York, NY 10001
+                        </>
+                      ),
+                    },
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-start gap-4">
+                      <div className="bg-primary/10 p-3 rounded-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-6 w-6 text-primary"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor">
+                          {item.icon}
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-800">
+                          {item.title}
+                        </h3>
+                        <p className="text-gray-600">{item.value}</p>
+                      </div>
+                    </div>
+                  ))}
+
+                  {/* Social Links */}
+                  <div className="mt-8">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                      {t("followUs")}
+                    </h3>
+                    <div className="flex gap-4">
+                      {["facebook", "instagram", "linkedin"].map(
+                        (network, index) => (
+                          <Link
+                            href="#"
+                            key={index}
+                            className="bg-primary/10 p-3 rounded-full hover:bg-primary/20 transition">
+                            <svg
+                              className="h-6 w-6 text-primary"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                              dangerouslySetInnerHTML={{
+                                __html: getSocialIcon(network),
+                              }}
+                            />
+                          </Link>
+                        )
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
 function getSocialIcon(network: string) {

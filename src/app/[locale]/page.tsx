@@ -8,7 +8,7 @@ export default async function HomePage() {
   const lang = await getLocale();
 
   return (
-    <section className="relative min-h-[80vh] custom_header_p pt-20">
+    <section className="relative min-h-[80vh] custom_header_p">
       <div className="container mx-auto relative z-10 ">
         <div className="flex flex-col-reverse lg:flex-row xl:flex-row h-full lg:h-[80vh] gap-10 !overflow-y-hidden ">
           <div className="w-full  h-full flex items-center custom_padding justify-center lg:justify-start ">

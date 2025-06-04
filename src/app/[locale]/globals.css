@@ -64,6 +64,7 @@
       transform: translateX(100%) rotate(30deg);
     }
   }
+
   .custom_padding {
     @apply ltr:xl:pl-28 ltr:lg:pl-28 ltr:md:pl-0 ltr:sm:pl-0 ltr:xs:pl-0 rtl:xl:pr-28 rtl:lg:pr-28 rtl:md:pr-0 rtl:sm:pr-0 rtl:xs:pr-0;
   }

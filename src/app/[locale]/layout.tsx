@@ -53,7 +53,7 @@ export default async function LocaleLayout({
                 <div className="absolute top-1/2 -left-24 w-64 h-64 rounded-full bg-secondary opacity-10"></div>
                 <div className="absolute bottom-0 right-1/4 w-72 h-72 rounded-full bg-primary opacity-5"></div>
               </div>
-              {children}
+              <div className="pt-20">{children}</div>
             </div>
           </ThemeProvider>
         </NextIntlClientProvider>

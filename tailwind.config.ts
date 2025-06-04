@@ -18,7 +18,7 @@ export default {
       },
       colors: {
         primary: "#42E8B9",
-        secondary: "#3B82F6",
+        secondary: "#42E8B9cc",
         dark: "#1E293B",
       },
       fontFamily: {
