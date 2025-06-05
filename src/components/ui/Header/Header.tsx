@@ -11,11 +11,11 @@ export default async function HeaderWithSidebar() {
       title: t("home"),
       href: "/",
     },
-    {
-      id: 3,
-      title: t("aboutus"),
-      href: "/about",
-    },
+    // {
+    //   id: 3,
+    //   title: t("aboutus"),
+    //   href: "/about",
+    // },
     {
       id: 4,
       title: t("terms_conditions"),

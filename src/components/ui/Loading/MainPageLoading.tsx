@@ -17,7 +17,7 @@ const MainPageLoading = () => {
           />
         ) : (
           <Image
-            src="/logos/auditlogoblack.svg"
+            src="/logos/logo.svg"
             alt="Logo"
             className="w-28 h-28 animate-pulse"
             width={100}

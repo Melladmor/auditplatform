@@ -3,7 +3,13 @@ import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import ContactForm from "./components/ContactForm";
 import fetchPublicData from "@/lib/api/fetchPublicData";
-
+import { Metadata } from "next";
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("meta.pages.contact");
+  return {
+    title: t("title"),
+  };
+}
 export default async function ContactPage() {
   const t = await getTranslations("contactPage");
   const title = await getTranslations();

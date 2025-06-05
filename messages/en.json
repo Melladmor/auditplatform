@@ -43,5 +43,31 @@
     "oman": "Oman",
     "sending": "Sending...",
     "messagesent": "Message Sent Successfully"
+  },
+  "contactus": "Contact Us",
+  "notFound": {
+    "titleFirst": "page",
+    "titleSecond": "Not Found",
+    "titleThird": "404",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "goHome": "Go Back Home"
+  },
+  "meta": {
+    "layout": {
+      "title": "Audit Station Platform",
+      "description": "Audit Station is a leading recruitment platform that connects businesses with thoroughly vetted, highly qualified accountants. Our secure, performance-driven matching system simplifies the hiring process, helping companies find top accounting talent while empowering professionals to grow their careers.",
+      "keywords": "Audit Station, hire accountants, accounting recruitment, verified accountants, accounting professionals, finance talent, accountant job platform, find accountants, accounting careers, secure hiring platform"
+    },
+    "pages": {
+      "terms": {
+        "title": "Terms & Conditions | Audit Station"
+      },
+      "privacy": {
+        "title": "Privacy Policy | Audit Station"
+      },
+      "contact": {
+        "title": "Contact Us | Audit Station"
+      }
+    }
   }
 }

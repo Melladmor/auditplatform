@@ -44,5 +44,32 @@
     "sending": "Envoi en cours...",
     "messagesent": "Message envoyé avec succès"
   },
-  "contactus": "Contactez-nous"
+  "contactus": "Contactez-nous",
+  "notFound": {
+    "titleFirst": "page",
+    "titleSecond": "introuvable",
+    "titleThird": "404",
+    "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "goHome": "Retour à l'accueil"
+  },
+
+  "meta": {
+    "layout": {
+      "title": "Plateforme Audit Station",
+      "description": "Audit Station est une plateforme de recrutement de premier plan qui met en relation les entreprises avec des comptables hautement qualifiés et rigoureusement vérifiés. Grâce à un système de correspondance sécurisé et basé sur la performance, nous simplifions le processus de recrutement et aidons les professionnels à faire évoluer leur carrière.",
+      "keywords": "Audit Station, recruter des comptables, recrutement comptabilité, comptables vérifiés, professionnels de la comptabilité, talents financiers, plateforme emploi comptable, trouver des comptables, carrières en comptabilité, plateforme de recrutement sécurisée"
+    },
+
+    "pages": {
+      "terms": {
+        "title": "Conditions Générales | Audit Station"
+      },
+      "privacy": {
+        "title": "Politique de Confidentialité | Audit Station"
+      },
+      "contact": {
+        "title": "Contactez-nous | Audit Station"
+      }
+    }
+  }
 }
